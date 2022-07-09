@@ -1,0 +1,59 @@
+﻿<table class="mt-4 table table-hover">
+    <caption>Ingresos 2022</caption>
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Soles</th>
+                  <th scope="col">Dolares</th>
+                </tr>
+              </thead>
+              <tbody>
+                @{
+                    decimal contador1 = 0;
+                }
+
+               @foreach (var item in Model){
+                <tr>
+                  @if (@item.Tipo=="Ingreso")
+                  {
+                      <td>@item.Monto</td>
+                      <td>@item.Nota</td>
+                      
+                      contador1 = contador1 + @item.Monto;
+                  }
+                </tr>
+               }
+             
+         </tbody>
+</table>
+<h3>Total Ingresos: @contador1</h3>
+
+<table class="mt-4 table table-hover">
+    <caption>Egresos 2022</caption>
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Soles</th>
+                  <th scope="col">Dolares</th>
+                  <th scope="col">Saldo Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                @{
+                    decimal contador = 0;
+                }
+
+               @foreach (var item in Model){
+                <tr>
+                 @if (@item.Tipo=="gasto")
+                    {
+                      <td>@item.Monto</td>
+                      <td>@item.Monto</td>
+                      contador = contador + @item.Monto;
+                    }
+                </tr>
+               }
+               
+         </tbody>
+</table>
+<h3>Total Egresos: @contador</h3>
+
+<h1>Gasto Total: @ViewBag.SaldoIngreso</h1>  

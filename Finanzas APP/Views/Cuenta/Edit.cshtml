@@ -1,0 +1,15 @@
+﻿
+
+<div class="container">
+
+    <form action="/cuenta/edit?id=@Model.Id" method="post">
+      <div class="mb-3">
+        <label for="Nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre">
+        <div id="emailHelp" class="form-text">Ingrese nombre de la cuenta</div>
+      </div>
+       @Html.ValidationMessage("Id")
+      <button type="submit" class="btn btn-primary">Guardar</button>
+        <a  class="btn btn-link"href="/cuenta/index">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+﻿
+<div  class="container">
+
+    <form action="/cuentaTransaccion/create?cuentaId=@ViewBag.CuentaId" method="post">
+      <div class="mb-3">
+        <label for="Fecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="Fecha" name="Fecha" value="@Model.Fecha">
+            @Html.ValidationMessage("Fecha")
+      </div>
+      <div class="mb-3">
+          <label for="Tipo" class="form-label">Tipo</label>
+           <select class="form-select" name="Tipo"  id="Tipo">
+                    <option value="Ingreso">Ingreso</option>
+                    <option value="Gasto">Gasto</option>
+           </select>
+      </div>
+      <div class="mb-3">
+        <label for="Monto" class="form-label">Monto</label>
+        <input type="text" class="form-control" id="Monto" name="Monto" value="@Model.Monto">
+            @Html.ValidationMessage("Monto")
+      </div>
+      <div class="mb-3">
+        <label for="Monto" class="form-label">Nota</label>
+        <input type="text" class="form-control" id="Nota" name="Nota" value="@Model.Nota">
+            @Html.ValidationMessage("Nota")
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <a  class="btn btn-link"href="/cuentaTransaccion/index">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿
+<div class="container">
+	<h1 class="text-info" id="Main Title">Finanzas App</h1>
+		   <div class="btn btn-info text-black">
+			  <a  href="/cuenta/create">Nueva Cuenta</a>
+		  </div>
+	
+
+	<table class="table table-striped">
+	  <thead>
+		<tr>
+		  <th scope="col">Nombre</th>
+		  <th scope="col">Categoria</th>
+		  <th scope="col">Monto</th>
+		  <th scope="col">Transacciones</th>
+		  <th scope="col">Edit</th>
+		  <th scope="col">Delete</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		  @foreach(var c in Model){
+			<tr>
+			  <th scope="row">@c.Nombre</th>
+			  <th scope="row">@c.Categoria.Nombre</th>
+			  <th scope="row">@c.Monto</th>
+			  <th >
+					<a class="link-primary" href="/cuentaTransaccion?cuentaId=@c.Id">Movimientos</a>
+			  </th>
+			  <th >
+					<a class="link-primary" href="/cuenta/delete?id=@c.Id">Eliminar</a>
+			  </th>
+			   <th >
+					<a class="link-primary" href="/cuenta/details?id=@c.Id">Estado De Cuenta</a>
+			  </th>
+			</tr>
+		  }
+	  </tbody>
+	</table>
+	Total: @ViewBag.Total
+</div>
