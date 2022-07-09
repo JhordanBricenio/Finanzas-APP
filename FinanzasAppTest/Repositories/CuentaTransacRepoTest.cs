@@ -46,8 +46,6 @@ namespace FinanzasAppTest.Repositories
 
             cuentaTransRepo.insertar(new Transaccion());
 
-            //Assert.AreEqual(2, result.Count);
-
         }
 
 
